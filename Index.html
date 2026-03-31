@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMAD | Exploración al Límite</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+            <img src="assets/img/Logo_Brujula.png" alt="Logo" class="logo-nav me-2">
+            N O M A D
+        </a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="tooltip" title="Volver al inicio">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#destinos">Destinos</a></li>
+                <li class="nav-item"><a class="nav-link btn-contacto ms-lg-3" href="#seccion-registro">Registrarse</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center text-white d-flex align-items-center">
+    <div class="container">
+       <h1 class="display-2 fw-bold mb-3">
+    Explora lo <span id="texto-dinamico" style="color: #4ade80;">Inexplorado</span>
+</h1>
+        <p class="lead mb-4 fs-4">Rutas exclusivas para la verdadera aventura.</p>
+        <a href="#destinos" class="btn btn-light btn-lg rounded-pill px-5 fw-bold">Descubrir</a>
+    </div>
+</header>
+
+<div class="container text-center my-5" id="destinos">
+    <h2 class="fw-bold mb-4">Nuestras Expediciones</h2>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+        <button class="btn filtro-btn active" data-filter="todos"><i class="fas fa-globe me-2"></i>Todos</button>
+        <button class="btn filtro-btn" data-filter="montaña"><i class="fas fa-mountain me-2"></i>Montaña</button>
+        <button class="btn filtro-btn" data-filter="selva"><i class="fas fa-leaf me-2"></i>Selva</button>
+        <button class="btn filtro-btn" data-filter="rios"><i class="fas fa-water me-2"></i>Ríos</button>
+    </div>
+</div>
+
+<section class="container mb-5">
+    <div class="row g-4" id="contenedor-paquetes">
+        
+        <div class="col-md-4 paquete montaña">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/aconcagua.jpg" class="card-img-top" alt="Aconcagua">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Trekking Aconcagua</h5>
+                    <p class="paquete-descripcion">El centinela de piedra. Un desafío de altura en los Andes argentinos.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$1,200</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 paquete montaña">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/pico_duarte.jpg" class="card-img-top" alt="Pico Duarte">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Pico Duarte (RD)</h5>
+                    <p class="paquete-descripcion">La cima del Caribe. Un recorrido místico entre pinos y nubes.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$350</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 paquete montaña">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/everest.jpg" class="card-img-top" alt="Everest">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Monte Everest (Base)</h5>
+                    <p class="paquete-descripcion">A los pies del gigante. La expedición más icónica del Himalaya.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$2,500</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 paquete selva">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/selva.jpg" class="card-img-top" alt="Amazonas">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Amazonas Profundo</h5>
+                    <p class="paquete-descripcion">Navegación y supervivencia en el pulmón verde del mundo.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$850</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 paquete selva">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/ciudad_perdida.jpg" class="card-img-top" alt="Ciudad Perdida">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Ciudad Perdida (Col)</h5>
+                    <p class="paquete-descripcion">Arqueología y selva virgen en la Sierra Nevada de Santa Marta.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$980</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 paquete selva">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/borneo.jpg" class="card-img-top" alt="Borneo">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Selva de Borneo</h5>
+                    <p class="paquete-descripcion">Encuentro con orangutanes en santuarios de biodiversidad extrema.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$1,100</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 paquete rios">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/Kayak.png" class="card-img-top" alt="Patagonia">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Kayak Patagonia</h5>
+                    <p class="paquete-descripcion">Navega entre glaciares milenarios en aguas de color turquesa.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$1,100</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 paquete rios">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/futaleufu.jpg" class="card-img-top" alt="Futaleufú">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Rafting Futaleufú</h5>
+                    <p class="paquete-descripcion">Adrenalina pura en los rápidos clase V de la Patagonia Chilena.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$1,350</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 paquete rios">
+            <div class="card h-100 border-0 card-viaje shadow-sm">
+                <img src="assets/img/zambeze.jpg" class="card-img-top" alt="Zambeze">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Río Zambeze (Zambia)</h5>
+                    <p class="paquete-descripcion">Rafting salvaje bajo el rocío de las Cataratas Victoria.</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="h4 mb-0 fw-bold">$1,250</span>
+                        <a href="#seccion-registro" class="btn btn-dark rounded-pill">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="seccion-registro" class="registro-container py-5 my-5">
+    <div class="container bg-white rounded-4 shadow-lg p-5">
+        <div class="row align-items-center">
+            
+            <div class="col-md-5 mb-4 mb-md-0 p-lg-4 text-registro">
+                <h2 class="fw-bold text-success mb-3">¿Por qué NOMAD?</h2>
+                <p class="text-muted">No somos una agencia de viajes convencional; somos expertos de experiencias. Al registrarte en nuestra plataforma, obtienes acceso a rutas cerradas al público general y un seguro de aventura total.</p>
+                <div class="alert alert-success border-0 small mt-3">
+                    <i class="fas fa-shield-alt me-2"></i> Tus datos están protegidos por encriptación NOMAD.
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="card border-0 p-4 shadow-sm">
+                    <h4 class="fw-bold mb-4 text-center">Completa tu Registro</h4>
+                    <form id="formRegistro">
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Nombre Completo" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control rounded-pill" id="email" placeholder="Correo Electrónico" required>
+                        </div>
+                       <div class="col-12">
+    <label class="form-label small fw-bold text-muted ms-2">¿A dónde quieres ir?</label>
+    <select class="form-select rounded-pill shadow-sm" id="destinoRegistro" required>
+        <option selected disabled value="">Elige tu próxima aventura...</option>
+        
+        <optgroup label="🏔️ MONTAÑA">
+            <option value="everest">Monte Everest (Himalaya)</option>
+            <option value="alpes">Alpes Suizos (Europa)</option>
+            <option value="aconcagua">Trekking Aconcagua (Andes)</option>
+            <option value="pico-duarte">Pico Duarte (Rep. Dom.)</option>
+        </optgroup>
+
+        <optgroup label="🌿 SELVA">
+            <option value="amazonas">Amazonas Profundo (Brasil)</option>
+            <option value="borneo">Selva de Borneo (Malasia)</option>
+            <option value="yasuni">Parque Yasuní (Ecuador)</option>
+            <option value="ciudad-perdida">Ciudad Perdida (Colombia)</option>
+        </optgroup>
+
+        <optgroup label="🌊 RÍOS">
+            <option value="zambeze">Río Zambeze (Zambia)</option>
+            <option value="futaleufu">Río Futaleufú (Chile)</option>
+            <option value="kayak-patagonia">Kayak Patagonia (Argentina)</option>
+            <option value="okavango">Delta del Okavango (Botsuana)</option>
+        </optgroup>
+    </select>
+</div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-dark w-100 rounded-pill fw-bold" data-bs-toggle="tooltip" title="Finaliza tu proceso de expedición">Registrarme Ahora</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <h3 class="fw-bold">N O M A D</h3>
+        <p class="small text-muted mb-0">© 2026 Nomad Expeditions |</p>
+    </div>
+</footer>
+
+<script src="vendors/jquery/jquery-3.6.0.min.js"></script>
+<script src="vendors/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

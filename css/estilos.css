@@ -1,0 +1,131 @@
+:root {
+    --negro: #121212;
+    --verde: #2d5a27;
+    --fondo: #f7f8f8;
+}
+
+body { background-color: var(--fondo); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+/* Navbar y Logo */
+.navbar { background-color: var(--negro) !important; padding: 1rem 0; }
+.logo-nav { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
+.navbar-brand { letter-spacing: 5px; }
+
+/* Hero con Imagen de Fondo  */
+.hero-section {
+    height: 75vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/img/banner1.jpg');
+    background-size: cover; background-position: center; background-attachment: fixed;
+}
+
+/* Filtros */
+.filtro-btn { border-radius: 50px; padding: 10px 25px; background: rgb(250, 250, 250); border: 1px solid #ddd; transition: 0.3s; }
+.filtro-btn.active, .filtro-btn:hover { background-color: var(--verde) !important; color: white !important; }
+
+/* Tarjetas y Efecto Descripción */
+.card-viaje {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 20px !important; overflow: hidden;
+}
+
+.card-viaje:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+.paquete-descripcion {
+    font-size: 0.9rem; color: #666;
+    display: none; 
+    margin-top: 10px;
+    animation: fadeIn 0.5s ease;
+}
+
+.card-viaje:hover .paquete-descripcion {
+    display: block; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card-img-top { height: 220px; object-fit: cover; }
+
+/* Botones */
+.btn-dark:hover { background-color: var(--verde); border-color: var(--verde); }
+/* */
+
+.navbar {
+    transition: all 0.4s ease-in-out;
+    background-color: transparent !important;
+    position: absolute; 
+    width: 100%;
+    z-index: 1000;
+}
+
+/*  JS cuando bajas el scroll */
+.navbar-scrolled {
+    position: fixed; 
+    background-color: rgba(18, 18, 18, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* Ajuste para el texto del Navbar  */
+.navbar-dark .nav-link {
+    color: #fbf8f8 !important;
+    font-weight: 500;
+}
+.paquete {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.paquete.aparecer {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-viaje {
+    overflow: hidden; 
+}
+
+.card-img-top {
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.22, 1);
+}
+
+.card-viaje:hover .card-img-top {
+    transform: scale(1.15) rotate(1deg); /* Zoom + ligera rotación */
+    filter: brightness(0.9);
+}
+
+/* --- Estilos de sección de registro --- */
+
+/* 1. Fondo de la sección  */
+.registro-container {
+    position: relative;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/img/banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    border-radius: 20px; 
+}
+
+
+#seccion-registro h2, 
+#seccion-registro .text-registro p {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5); 
+}
+
+/* 3.  tarjeta del formulario  */
+#seccion-registro .card {
+    background-color: rgb(10, 134, 55); 
+    border-radius: 15px;
+}
+
+/* 4. Estilo para el input  */
+#formRegistro input, 
+#formRegistro select {
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+}
