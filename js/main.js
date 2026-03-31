@@ -1,14 +1,13 @@
 $(document).ready(function() {
     // 1. Inicializar Tooltips de Bootstrap
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle=\"tooltip\"]'))
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     });
 
-    // 2. Filtros de Categoría
+    // 2. Filtros de Categoría (Mejorado)
     $('.filtro-btn').click(function() {
         var categoria = $(this).attr('data-filter');
-        
         $('.filtro-btn').removeClass('active');
         $(this).addClass('active');
 
@@ -20,19 +19,47 @@ $(document).ready(function() {
         }
     });
 
-    // 3. Manejo del Formulario de Registro
+    // 3. ÚNICO MANEJO DEL FORMULARIO (Combinado y Corregido)
     $('#formRegistro').on('submit', function(e) {
         e.preventDefault();
         
+        const btn = $(this).find('button');
+        const originalText = btn.html();
         const nombre = $('#nombre').val();
-        const descripcionNomad = "NOMAD representa la pasión por descubrir lo inexplorado con seguridad y respeto por la naturaleza. Al registrarte, dejas de ser un turista para convertirte en un expedicionario.";
+        const destino = $('#destinoRegistro option:selected').text();
 
-        alert("¡Registro Exitoso, " + nombre + "!\n\n" + descripcionNomad + "\n\nUn asesor te contactará para coordinar tu viaje.");
+        // Efecto de carga profesional
+        btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Verificando disponibilidad...');
+        btn.prop('disabled', true);
+
+        setTimeout(() => {
+            // Mensaje final profesional
+            alert(`¡Registro Exitoso, ${nombre}!\n\nTu expedición a "${destino}" ha sido reservada.\nUn guía NOMAD revisará tu perfil y te contactará pronto.`);
+            
+            // Resetear todo
+            btn.html(originalText);
+            btn.prop('disabled', false);
+            this.reset();
+            
+            // Limpiar estilos de validación
+            $(this).find('input').css({'border-color': '', 'box-shadow': ''});
+        }, 2000);
+    });
+
+    // 4. Validación de Email en tiempo real
+    $('#email').on('keyup', function() {
+        const email = $(this).val();
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-        this.reset();
+        if (regex.test(email)) {
+            $(this).css({'border-color': '#2d5a27', 'box-shadow': '0 0 5px rgba(45, 90, 39, 0.5)'});
+        } else {
+            $(this).css({'border-color': '#dc3545', 'box-shadow': '0 0 5px rgba(220, 53, 69, 0.5)'});
+        }
     });
 });
 
+// 5. Control del Navbar al hacer Scroll
 $(window).scroll(function() {
     if ($(this).scrollTop() > 50) {
         $('.navbar').addClass('navbar-scrolled shadow-lg');
@@ -41,6 +68,7 @@ $(window).scroll(function() {
     }
 });
 
+// 6. Animación de aparición de paquetes
 function animarScroll() {
     $('.paquete').each(function() {
         var posicionElemento = $(this).offset().top;
@@ -51,64 +79,14 @@ function animarScroll() {
         }
     });
 }
-
 $(window).on('scroll load', animarScroll);
 
-$('#formRegistro').submit(function(e) {
-    e.preventDefault();
-    let btn = $(this).find('button');
-    let originalText = btn.html();
-
-    // Efecto de carga
-    btn.html('<i class=\"fas fa-spinner fa-spin\"></i> Procesando ruta...');
-    btn.prop('disabled', true);
-
-    setTimeout(() => {
-        alert("¡Expedición confirmada!\n\nHas dado el primer paso para salir de la rutina. Un guía NOMAD revisará tu perfil.");
-        btn.html(originalText);
-        btn.prop('disabled', false);
-        this.reset();
-    }, 2000);
-});
-
+// 7. Texto Dinámico en el Hero
 const palabras = ["Inexplorado", "Salvaje", "Auténtico", "Legendario"];
 let i = 0;
-
 setInterval(function() {
     $('#texto-dinamico').fadeOut(400, function() {
         $(this).text(palabras[i]).fadeIn(400);
         i = (i + 1) % palabras.length;
     });
 }, 3000);
-
-
-// Validación de Email en tiempo real
-$('#email').on('keyup', function() {
-    const email = $(this).val();
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
-    if (regex.test(email)) {
-        $(this).css('border-color', '#2d5a27').css('box-shadow', '0 0 5px rgba(45, 90, 39, 0.5)');
-    } else {
-        $(this).css('border-color', '#dc3545').css('box-shadow', '0 0 5px rgba(220, 53, 69, 0.5)');
-    }
-});
-
-// Efecto de botón "Cargando" al registrar
-$('#formRegistro').submit(function(e) {
-    e.preventDefault();
-    const btn = $(this).find('button');
-    const originalText = btn.html();
-
-    btn.html('<i class="fas fa-spinner fa-spin me-2"></i> Verificando disponibilidad...');
-    btn.prop('disabled', true);
-
-    setTimeout(() => {
-        const nombre = $('#nombre').val();
-        alert(`¡Expedición confirmada para ${nombre}!\n\nUn guía NOMAD revisará tu solicitud.`);
-        btn.html(originalText);
-        btn.prop('disabled', false);
-        this.reset();
-        $(this).find('input').css('border-color', '').css('box-shadow', ''); // Limpiar estilos de validación
-    }, 2000);
-});

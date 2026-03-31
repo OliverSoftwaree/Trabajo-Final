@@ -175,7 +175,6 @@
     </div>
 </section>
 
-
 <section id="seccion-registro" class="registro-container py-5 my-5">
     <div class="container bg-white rounded-4 shadow-lg p-5">
         <div class="row align-items-center">
@@ -192,46 +191,46 @@
                 <div class="card border-0 p-4 shadow-sm">
                     <h4 class="fw-bold mb-4 text-center">Completa tu Registro</h4>
                     <form id="formRegistro">
-                        </form>
-                </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Nombre Completo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control rounded-pill" id="email" placeholder="Correo Electrónico" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted ms-2">¿A dónde quieres ir?</label>
+                                <select class="form-select rounded-pill shadow-sm" id="destinoRegistro" required>
+                                    <option selected disabled value="">Elige tu próxima aventura...</option>
+                                    <optgroup label="🏔️ MONTAÑA">
+                                        <option value="everest">Monte Everest (Himalaya)</option>
+                                        <option value="alpes">Alpes Suizos (Europa)</option>
+                                        <option value="aconcagua">Trekking Aconcagua (Andes)</option>
+                                        <option value="pico-duarte">Pico Duarte (Rep. Dom.)</option>
+                                    </optgroup>
+                                    <optgroup label="🌿 SELVA">
+                                        <option value="amazonas">Amazonas Profundo (Brasil)</option>
+                                        <option value="borneo">Selva de Borneo (Malasia)</option>
+                                        <option value="yasuni">Parque Yasuní (Ecuador)</option>
+                                        <option value="ciudad-perdida">Ciudad Perdida (Colombia)</option>
+                                    </optgroup>
+                                    <optgroup label="🌊 RÍOS">
+                                        <option value="zambeze">Río Zambeze (Zambia)</option>
+                                        <option value="futaleufu">Río Futaleufú (Chile)</option>
+                                        <option value="kayak-patagonia">Kayak Patagonia (Argentina)</option>
+                                        <option value="okavango">Delta del Okavango (Botsuana)</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-dark w-100 rounded-pill fw-bold" data-bs-toggle="tooltip" title="Finaliza tu proceso de expedición">Registrarme Ahora</button>
+                            </div>
+                        </div>
+                    </form> </div>
             </div>
         </div>
     </div>
 </section>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control rounded-pill" id="nombre" placeholder="Nombre Completo" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control rounded-pill" id="email" placeholder="Correo Electrónico" required>
-                        </div>
-                       <div class="col-12">
-    <label class="form-label small fw-bold text-muted ms-2">¿A dónde quieres ir?</label>
-    <select class="form-select rounded-pill shadow-sm" id="destinoRegistro" required>
-        <option selected disabled value="">Elige tu próxima aventura...</option>
-        
-        <optgroup label="🏔️ MONTAÑA">
-            <option value="everest">Monte Everest (Himalaya)</option>
-            <option value="alpes">Alpes Suizos (Europa)</option>
-            <option value="aconcagua">Trekking Aconcagua (Andes)</option>
-            <option value="pico-duarte">Pico Duarte (Rep. Dom.)</option>
-        </optgroup>
-
-        <optgroup label="🌿 SELVA">
-            <option value="amazonas">Amazonas Profundo (Brasil)</option>
-            <option value="borneo">Selva de Borneo (Malasia)</option>
-            <option value="yasuni">Parque Yasuní (Ecuador)</option>
-            <option value="ciudad-perdida">Ciudad Perdida (Colombia)</option>
-        </optgroup>
-
-        <optgroup label="🌊 RÍOS">
-            <option value="zambeze">Río Zambeze (Zambia)</option>
-            <option value="futaleufu">Río Futaleufú (Chile)</option>
-            <option value="kayak-patagonia">Kayak Patagonia (Argentina)</option>
-            <option value="okavango">Delta del Okavango (Botsuana)</option>
-        </optgroup>
-    </select>
-</div>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-dark w-100 rounded-pill fw-bold" data-bs-toggle="tooltip" title="Finaliza tu proceso de expedición">Registrarme Ahora</button>
