@@ -5,7 +5,7 @@ $(document).ready(function() {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     });
 
-    // 2. Filtros de Categoría (Mejorado)
+    // 2. Filtros de Categoría animacion
     $('.filtro-btn').click(function() {
         var categoria = $(this).attr('data-filter');
         $('.filtro-btn').removeClass('active');
@@ -19,7 +19,7 @@ $(document).ready(function() {
         }
     });
 
-    // 3. ÚNICO MANEJO DEL FORMULARIO (Combinado y Corregido)
+    // 3. ÚNICO MANEJO DEL FORMULARIO 
     $('#formRegistro').on('submit', function(e) {
         e.preventDefault();
         
@@ -33,10 +33,10 @@ $(document).ready(function() {
         btn.prop('disabled', true);
 
         setTimeout(() => {
-            // Mensaje final profesional
+            // Mensaje final 
             alert(`¡Registro Exitoso, ${nombre}!\n\nTu expedición a "${destino}" ha sido reservada.\nUn guía NOMAD revisará tu perfil y te contactará pronto.`);
             
-            // Resetear todo
+            // Resetear formulario y botón
             btn.html(originalText);
             btn.prop('disabled', false);
             this.reset();
@@ -46,7 +46,7 @@ $(document).ready(function() {
         }, 2000);
     });
 
-    // 4. Validación de Email en tiempo real
+    // 4. Validación de Email 
     $('#email').on('keyup', function() {
         const email = $(this).val();
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
